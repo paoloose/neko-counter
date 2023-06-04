@@ -1,12 +1,15 @@
 import express from 'express'
+import dotenv from 'dotenv';
 import { generateNekoBanner } from './banner';
 import { redis } from './services/redis';
-import dotenv from 'dotenv';
+import { cors } from './middlewares/cors';
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env['PORT'] || 3000;
+
+app.use(cors);
 
 app.get('/counter', async (req, res) => {
   const { id } = req.query;
