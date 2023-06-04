@@ -1,6 +1,7 @@
 import { promises as fs } from 'node:fs';
 
-const DEFAULT_PATH = './neko.png';
+const DEFAULT_PATH = './cache/neko.png';
+fs.mkdir('./cache').catch(() => {});
 
 export async function saveImage(url: string, path: string = DEFAULT_PATH) {
   const response = await fetch(url);
