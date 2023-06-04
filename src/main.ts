@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import { generateNekoBanner } from './banner';
 import { redis } from './services/redis';
 import { cors } from './middlewares/cors';
+import { nocache } from './middlewares/nocache';
 
 dotenv.config();
 
@@ -10,6 +11,7 @@ const app = express();
 const PORT = process.env['PORT'] || 3000;
 
 app.use(cors);
+app.use(nocache);
 
 app.get('/counter', async (req, res) => {
   const { id } = req.query;
