@@ -1,6 +1,9 @@
 {
     "name": "neko-counter",
     "type": "module",
+    "engines": {
+        "node": "18.15.0"
+    },
     "scripts": {
         "start": "tsx src/main.ts",
         "dev": "tsx --watch src/main.ts"
