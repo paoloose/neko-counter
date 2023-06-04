@@ -1,8 +1,8 @@
 {
     "name": "neko-counter",
     "scripts": {
-        "start": "tsx main.ts",
-        "dev": "tsx --watch main.ts"
+        "start": "tsx src/main.ts",
+        "dev": "tsx --watch src/main.ts"
     },
     "dependencies": {
         "@napi-rs/canvas": "^0.1.41",
