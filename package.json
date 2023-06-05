@@ -5,8 +5,8 @@
         "node": "18.15.0"
     },
     "scripts": {
-        "start": "tsx src/main.ts",
-        "dev": "tsx --watch src/main.ts"
+        "start": "tsx --require dotenv/config src/main.ts",
+        "dev": "tsx --require dotenv/config --watch src/main.ts"
     },
     "dependencies": {
         "@napi-rs/canvas": "0.1.41",
