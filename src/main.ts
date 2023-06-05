@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { json } from 'express'
 import createRoutes from './routes/create';
 import counterRoutes from './routes/counter';
 import { cors } from './middlewares/cors';
@@ -9,6 +9,7 @@ const PORT = process.env['PORT'] || 3000;
 
 app.use(cors);
 app.use(nocache);
+app.use(json());
 
 app.use(createRoutes);
 app.use(counterRoutes);
