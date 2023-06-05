@@ -22,7 +22,7 @@ router.post('/create', async (req, res) => {
 });
 
 // Type guard for validating body of POST /create
-function isValidPayload(payload: any): payload is CreatePayload {
+function isValidPayload(payload: any): payload is NekoCreationPayload {
   return (
     typeof payload === 'object' &&
     typeof payload.id === 'string' &&
