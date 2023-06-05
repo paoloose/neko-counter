@@ -73,7 +73,7 @@ export async function generateNekoBanner(props: BannerProps): Promise<Buffer> {
 
     ctx.font = nekonfig.small_font;
     ctx.fillStyle = text_color;
-    ctx.fillText('visits >w<', 10, 23);
+    ctx.fillText('visits >w<', 12, 23);
     ctx.fillText(props.count.toString(), badge_width / 2 + 12, 23);
 
 
