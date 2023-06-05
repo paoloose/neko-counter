@@ -6,7 +6,6 @@
 <div align="center">
     <img
         src="https://neko.up.railway.app/counter/neko_counter?style=badge"
-        title="Now you can count your visitors with nekօs too!"
         height="20"
     />
     <a href="https://railway.app/">
@@ -20,7 +19,6 @@
 <br>
 
 <div align="center">
-    <!-- <p align="center">Now you can count your visitors with nekօs too <code>>u<</code>!</p> -->
     <p align="center">A random neko for each of your visitors <code>>u<</code>!</p>
 </div>
 
@@ -52,7 +50,7 @@ Or much better, wrap it with an `<img>` tag (︶ω︶ ):
 ```html
 <img
     src="https://neko.up.railway.app/counter/neko_counter"
-    title="Now you can count your visitors with nekօs too!"
+    title="See this awesome counter? You can have one too!"
     height="20"
 /> <!-- custom height -->
 ```
@@ -73,8 +71,8 @@ Is the counter too big for ya? we have badges too! Set `style=badge` like this:
 
 <img
     src="https://neko.up.railway.app/counter/neko_counter?style=badge"
-    title="Now you can count your visitors with nekօs too!"
+    title="See this awesome counter? You can have one too!"
     height="20"
 /> `<-----` (o(´∀｀)o))✧˖° ✨
 
-Thanks to <https://nekos.best> for its awesome nekօs as a Service API (￣^￣ )ゞ
+Thanks to <https://nekos.best> for its awesome Nekos as a Service API (￣^￣ )ゞ
