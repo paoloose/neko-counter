@@ -20,7 +20,8 @@
 <br>
 
 <div align="center">
-    <p align="center">Now you can count your visitors with nekos too <code>>u<</code>!</p>
+    <!-- <p align="center">Now you can count your visitors with nekos too <code>>u<</code>!</p> -->
+    <p align="center">A random neko for each of your visitors <code>>u<</code>!</p>
 </div>
 
 ## Usage
@@ -75,3 +76,5 @@ Is the counter too big for ya? we have badges too! Set `style=badge` like this:
     title="Now you can count your visitors with nekos too!"
     height="20"
 /> `<-----` (o(´∀｀)o))✧˖° ✨
+
+Thanks to <https://nekos.best> for its awesome Nekos as a Service API (￣^￣ )ゞ
