@@ -78,6 +78,14 @@ class RedisDB {
         await db.client.set(db_key, JSON.stringify(this.props));
       }
 
+      async delete() {
+        return Document.delete((this.props as any).id);
+      }
+
+      async exists() {
+        return Document.exists((this.props as any).id);
+      }
+
       static async find(id: string) {
         const db_key = `${Document.collection_name}:${id}`;
         const str_data = await db.client.get(db_key);
@@ -91,6 +99,28 @@ class RedisDB {
         }
         catch {
           return null;
+        }
+      }
+
+      static async exists(id: string) {
+        const db_key = `${Document.collection_name}:${id}`;
+        try {
+          const exists = await db.client.exists(db_key);
+          return exists === 1;
+        }
+        catch {
+          return false;
+        }
+      }
+
+      static async delete(id: string) {
+        const db_key = `${Document.collection_name}:${id}`;
+        try {
+          await db.client.del(db_key);
+          return true;
+        }
+        catch {
+          return false;
         }
       }
     }
