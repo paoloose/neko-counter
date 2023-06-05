@@ -4,13 +4,11 @@ import { NekoUser } from '../schemas/NekoUser';
 
 const router = Router();
 
-router.get('/counter', async (req, res) => {
-  const { id } = req.query;
+router.get('/counter/:profile', async (req, res) => {
+  const { profile: profile_id } = req.params;
   const is_testing = req.query['test'] === 'true';
 
-  if (typeof id !== 'string') return res.end(400);
-
-  let neko_info = await NekoUser.find(id);
+  let neko_info = await NekoUser.find(profile_id);
 
   if (!neko_info) {
     return res.status(400).json({
@@ -25,7 +23,7 @@ router.get('/counter', async (req, res) => {
   try {
     await neko_info.save();
   } catch {
-    console.error(`[${(new Date()).toUTCString()}] Failed to save neko info for ${id}`);
+    console.error(`[${(new Date()).toUTCString()}] Failed to save neko info for ${profile_id}`);
   }
 
   res.writeHead(200, {
