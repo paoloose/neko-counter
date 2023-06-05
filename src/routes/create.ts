@@ -41,7 +41,7 @@ router.post('/create', async (req, res) => {
   catch {
     return res.status(500).send({
       status: 500,
-      error: 'Oh noesie-wosies! I\'m sowwy, but I couwdn\'t save the pwofile! Pwease, oh pwease, twy again watew!'
+      error: 'Something went wrong... so sowwy! (´；ω；｀)'
     });
   }
 

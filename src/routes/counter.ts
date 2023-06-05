@@ -22,7 +22,8 @@ router.get('/counter/:profile', async (req, res) => {
 
   try {
     await neko_info.save();
-  } catch {
+  }
+  catch {
     console.error(`[${(new Date()).toUTCString()}] Failed to save neko info for ${profile_id}`);
   }
 
