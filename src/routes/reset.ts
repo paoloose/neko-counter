@@ -31,12 +31,13 @@ router.get('/reset/:profile', async (req, res) => {
   }
 
   try {
+    const count_before = neko_info.props.count;
     neko_info.props.count = 0;
     await neko_info.save();
     return res.status(200).json({
       status: 200,
       message: `Countew for ${profile_id} reset to zewo successfuwwy (￣^￣ )ゞ`,
-      before: neko_info.props.count
+      before: count_before
     });
   }
   catch (err) {
