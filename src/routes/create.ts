@@ -4,14 +4,16 @@ import { NekoUser } from '../schemas/NekoUser';
 const router = Router();
 
 router.get('/create', async (req, res) => {
-  const payload = req.query;
-
-  if (!isValidPayload(payload)) {
+  if (!req.query['id'] || !req.query['password']) {
     return res.status(400).send({
       status: 400,
       error: 'How bad! It seems like the content is a bit nyot to my wiking! Pwease, oh pwease, take a peek at the docs over hewe: https://github.com/paowoowoo/neko-countew',
-      payload: payload || 10
     });
+  }
+  const payload: NekoCreationPayload = {
+    id: req.query['id'] as string,
+    password: req.query['password'] as string,
+    github_only: req.query['github_only'] ? req.query['github_only'] === 'true' : true
   }
 
   const registered = await NekoUser.exists(payload.id);
@@ -59,7 +61,6 @@ router.post('/create', async (req, res) => {
     return res.status(400).send({
       status: 400,
       error: 'How bad! It seems like the content is a bit nyot to my wiking! Pwease, oh pwease, take a peek at the docs over hewe: https://github.com/paowoowoo/neko-countew',
-      payload: payload || 10
     });
   }
 
