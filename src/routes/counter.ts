@@ -6,7 +6,6 @@ const router = Router();
 
 router.get('/counter/:profile', async (req, res) => {
   const { profile: profile_id } = req.params;
-  const is_testing = req.query['test'] === 'true';
 
   let neko_info = await NekoUser.find(profile_id);
 
@@ -17,8 +16,16 @@ router.get('/counter/:profile', async (req, res) => {
     });
   }
 
-  neko_info.props.count++;
-  const banner_buffer = await generateNekoBanner(neko_info.props.count);
+  const user_agent = req.headers['user-agent'] || '';
+  const viewing_from_github = user_agent.includes('github-camo');
+  if ((neko_info.props.github_only && !viewing_from_github) === false) {
+    neko_info.props.count++;
+  }
+
+  const banner_buffer = await generateNekoBanner({
+    count: neko_info.props.count,
+    show_is_github_only: neko_info.props.github_only && !viewing_from_github
+  });
 
   try {
     await neko_info.save();

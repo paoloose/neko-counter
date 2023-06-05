@@ -5,6 +5,7 @@ class NekoUserSchema extends DBSchema {
   count = 0;
   created_at? = Date.now();
   password = '';
+  github_only = true;
 
   validate() {
     console.log("validating", this.id)

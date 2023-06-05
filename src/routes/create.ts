@@ -32,7 +32,8 @@ router.post('/create', async (req, res) => {
   const new_profile = new NekoUser({
     id: payload.id,
     password: payload.password,
-    count: 0
+    count: 0,
+    github_only: payload.github_only ?? true
   });
 
   try {

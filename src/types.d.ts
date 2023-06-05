@@ -11,4 +11,5 @@ interface ConstructorOf<T> {
 interface NekoCreationPayload {
   id: string;
   password: string;
+  github_only?: boolean;
 }
