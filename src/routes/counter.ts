@@ -1,8 +1,15 @@
 import { Router } from 'express';
 import { generateNekoBanner } from '../banner';
 import { NekoUser } from '../schemas/NekoUser';
+import { parseHexColor } from '../utils/colors';
 
 const router = Router();
+
+type CounterQuery = {
+  color?: string;
+  bg_color?: string;
+  title?: string;
+};
 
 router.get('/counter/:profile', async (req, res) => {
   const { profile: profile_id } = req.params;
@@ -22,9 +29,13 @@ router.get('/counter/:profile', async (req, res) => {
     neko_info.props.count++;
   }
 
+  const { color, bg_color, title } = req.query as CounterQuery;
   const banner_buffer = await generateNekoBanner({
     count: neko_info.props.count,
-    show_is_github_only: neko_info.props.github_only && !viewing_from_github
+    show_is_github_only: neko_info.props.github_only && !viewing_from_github,
+    color: parseHexColor(color) ?? undefined,
+    bg_color: parseHexColor(bg_color) ?? undefined,
+    title
   });
 
   try {

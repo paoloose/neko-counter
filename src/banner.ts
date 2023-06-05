@@ -7,8 +7,8 @@ import { FONTS_DIR } from './utils/paths';
 const nekonfig = {
   width: 600,
   height: 200,
-  white: '#ffffff',
-  black: '#000000',
+  color: '#ffffff',
+  bg_color: '#000000',
   border_width: 4,
   title_text: 'Profile views',
   github_only_text: 'View from GitHub to incwease uwu',
@@ -24,12 +24,20 @@ GlobalFonts.registerFromPath(
 type BannerProps = {
   count: number;
   show_is_github_only: boolean;
+  bg_color?: string;
+  color?: string;
+  title?: string;
 };
 
 export async function generateNekoBanner(props: BannerProps): Promise<Buffer> {
   const canvas = createCanvas(nekonfig.width, nekonfig.height);
   const ctx = canvas.getContext('2d');
-  ctx.fillStyle = nekonfig.black;
+
+  const bg_color = props.bg_color || nekonfig.bg_color;
+  const text_color = props.color || nekonfig.color;
+  const title_text = props.title || nekonfig.title_text;
+
+  ctx.fillStyle = bg_color;
   ctx.fillRect(0, 0, nekonfig.width, nekonfig.height);
 
   const neko_img_url = await fetchNeko();
@@ -40,14 +48,14 @@ export async function generateNekoBanner(props: BannerProps): Promise<Buffer> {
   const img_width = img_height * (neko_img.width / neko_img.height);
 
   ctx.drawImage(neko_img, 0, 0, img_width, img_height);
-  ctx.strokeStyle = nekonfig.black;
+  ctx.strokeStyle = bg_color;
   ctx.lineWidth = nekonfig.border_width;
   ctx.strokeRect(0, 0, img_width, img_height);
 
   ctx.font = nekonfig.title_font;
-  ctx.fillStyle = nekonfig.white;
+  ctx.fillStyle = text_color;
 
-  ctx.fillText(nekonfig.title_text, img_width + 30, 60);
+  ctx.fillText(title_text, img_width + 30, 60);
 
   ctx.font = nekonfig.counter_font;
   ctx.fillText(props.count.toString(), img_width + 30, 150);
