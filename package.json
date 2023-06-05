@@ -1,6 +1,6 @@
 {
     "name": "neko-counter",
-    "version": "u.w.u-beta",
+    "version": "v1.0.0-uwu",
     "type": "module",
     "engines": {
         "node": "v18.12.1"
