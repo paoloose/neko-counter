@@ -74,5 +74,3 @@ Is the counter too big for ya? we have badges too! Set `style=badge` like this:
     title="See this awesome counter? You can have one too!"
     height="20"
 /> `<-----` (o(´∀｀)o))✧˖° ✨
-
-Thanks to <https://nekos.best> for its awesome Nekos as a Service API (￣^￣ )ゞ
