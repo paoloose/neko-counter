@@ -20,6 +20,7 @@ const nekonfig = {
   title_font: 'bold 35px "PT Sans"',
   counter_font: '85px "PT Sans"',
   small_font: '18px "PT Sans"',
+  badge_font: '20px "PT Sans"',
   style: 'random_neko' as 'random_neko' | 'badge'
 };
 
@@ -71,10 +72,10 @@ export async function generateNekoBanner(props: BannerProps): Promise<Buffer> {
     ctx.fillStyle = nekonfig.badge_color;
     ctx.fillRect(badge_width / 2, 0, badge_width / 2, badge_height);
 
-    ctx.font = nekonfig.small_font;
+    ctx.font = nekonfig.badge_font;
     ctx.fillStyle = text_color;
-    ctx.fillText('visits >w<', 12, 23);
-    ctx.fillText(props.count.toString(), badge_width / 2 + 12, 23);
+    ctx.fillText('visits >w<', 8, 24);
+    ctx.fillText(props.count.toString(), badge_width / 2 + 12, 24);
 
 
     return canvas.toBuffer('image/png');
