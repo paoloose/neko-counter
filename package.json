@@ -2,7 +2,7 @@
     "name": "neko-counter",
     "type": "module",
     "engines": {
-        "node": "18.15.0"
+        "node": "v18.12.1"
     },
     "scripts": {
         "start": "tsx --require dotenv/config src/main.ts",
