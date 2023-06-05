@@ -16,7 +16,7 @@ const nekonfig = {
   badge_color: '#c977da',
   border_width: 4,
   title_text: 'Profile views',
-  github_only_text: 'View from GitHub to incwease uwu',
+  github_only_text: 'Visit from GitHub to incwease uwu',
   title_font: 'bold 35px "PT Sans"',
   counter_font: '85px "PT Sans"',
   small_font: '18px "PT Sans"',

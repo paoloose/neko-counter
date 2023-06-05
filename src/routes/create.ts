@@ -7,7 +7,7 @@ router.get('/create', async (req, res) => {
   if (!req.query['id'] || !req.query['password']) {
     return res.status(400).send({
       status: 400,
-      error: 'How bad! It seems like the content is a bit nyot to my wiking! Pwease, oh pwease, take a peek at the docs over hewe: https://github.com/paowoowoo/neko-countew',
+      error: 'How bad! It seems like the content is a bit nyot to my wiking! Pwease, oh pwease, take a peek at the docs over hewe: https://github.com/paoloose/neko-counter',
     });
   }
   const payload: NekoCreationPayload = {
@@ -60,7 +60,7 @@ router.post('/create', async (req, res) => {
   if (!isValidPayload(payload)) {
     return res.status(400).send({
       status: 400,
-      error: 'How bad! It seems like the content is a bit nyot to my wiking! Pwease, oh pwease, take a peek at the docs over hewe: https://github.com/paowoowoo/neko-countew',
+      error: 'How bad! It seems like the content is a bit nyot to my wiking! Pwease, oh pwease, take a peek at the docs over hewe: https://github.com/paoloose/neko-counter',
     });
   }
 
