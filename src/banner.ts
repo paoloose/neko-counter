@@ -13,7 +13,7 @@ const nekonfig = {
   },
   color: '#ffffff',
   bg_color: '#000000',
-  badge_color: '#c977da',
+  badge_color: '#b46bc4',
   border_width: 4,
   title_text: 'Profile views',
   github_only_text: 'Visit from GitHub to incwease uwu',
