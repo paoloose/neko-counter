@@ -33,7 +33,9 @@ https://neko.up.railway.app/create?id=<your_id>&password=<pass>&github_only=<tru
 Where:
 
 - `id=<your_id>` is your unique id, it can be your username, whatever you want.
-- `password=<pass>` is your password, this will allow you to reset your counter.
+
+- `password=<pass>` is a password of your choice, this will allow you to reset your counter.
+
 - `github_only=<true/false>` is whether the counter can only be incremented when visiting from github or not. Very
   handy to avoid spamming.
 
